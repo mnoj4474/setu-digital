@@ -1,0 +1,197 @@
+/* ========================================
+   PROCESS
+   ======================================== */
+
+.process {
+    position: relative;
+    background: var(--color-background);
+    border-top: 1px solid var(--color-border);
+    overflow: hidden;
+}
+
+.process-header { margin-bottom: var(--space-3xl); }
+
+.process-heading-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
+    gap: var(--space-3xl);
+    align-items: end;
+}
+
+.process-title {
+    margin: 0;
+    max-width: 900px;
+    font-size: clamp(52px, 6.5vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+}
+
+.process-intro {
+    max-width: 420px;
+    margin: 0 0 8px;
+    color: var(--color-text-muted);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.process-timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: var(--space-lg);
+    padding-top: 70px;
+}
+
+.process-line {
+    position: absolute;
+    top: 94px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--color-border);
+}
+
+.process-step {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+}
+
+.process-step-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: var(--space-xl);
+}
+
+.process-number {
+    color: var(--color-gold);
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+}
+
+.process-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    color: var(--color-gold);
+    transition:
+        border-color var(--transition-normal),
+        background-color var(--transition-normal);
+}
+
+.process-step:hover .process-icon {
+    border-color: var(--color-gold);
+    background: var(--color-surface-light);
+}
+
+.process-step-title {
+    margin: 0;
+    font-size: clamp(30px, 3vw, 44px);
+    line-height: 1;
+}
+
+.process-step-description {
+    max-width: 240px;
+    margin: 16px 0 0;
+    color: var(--color-text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.process-closing {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--space-3xl);
+    text-align: center;
+}
+
+.process-closing p {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(38px, 5vw, 72px);
+    line-height: 1;
+}
+
+.process-closing span { color: var(--color-text-muted); }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .process-heading-row {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-xl);
+    }
+
+    .process-intro {
+        max-width: 600px;
+        margin-bottom: 0;
+    }
+
+    .process-timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-xl);
+        padding-top: 0;
+    }
+
+    .process-line { display: none; }
+
+    .process-step { padding: 28px 20px; }
+}
+
+@media (max-width: 768px) {
+    .process-header { margin-bottom: var(--space-2xl); }
+
+    .process-heading-row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-lg);
+    }
+
+    .process-title,
+    .process-intro {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .process-title { font-size: clamp(42px, 12vw, 60px); }
+
+    .process-intro {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .process-timeline {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding-top: 0;
+    }
+
+    .process-line { display: none; }
+
+    .process-step {
+        padding: 28px 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .process-step:last-child { border-bottom: none; }
+    .process-step-top { margin-bottom: var(--space-md); }
+
+    .process-step-description {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .process-closing { padding-top: var(--space-2xl); }
+
+    .process-closing p {
+        font-size: clamp(38px, 10vw, 56px);
+    }
+}

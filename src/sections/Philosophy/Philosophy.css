@@ -1,0 +1,184 @@
+/* ========================================
+   PHILOSOPHY
+   ======================================== */
+
+.philosophy {
+    position: relative;
+    background: var(--color-background);
+    border-top: 1px solid var(--color-border);
+    overflow: hidden;
+}
+
+.philosophy-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
+    gap: var(--space-3xl);
+    align-items: end;
+}
+
+.philosophy-title {
+    margin: 0;
+    max-width: 900px;
+    font-size: clamp(52px, 7vw, 108px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+}
+
+.philosophy-description {
+    max-width: 420px;
+    margin: 0 0 8px;
+    color: var(--color-text-muted);
+    font-size: var(--text-large);
+    line-height: 1.5;
+}
+
+.philosophy-bridge {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: var(--space-xl);
+    margin-top: var(--space-3xl);
+    padding: var(--space-xl) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.philosophy-node {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.philosophy-node-number {
+    color: var(--color-gold);
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+}
+
+.philosophy-node-title {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3vw, 46px);
+    line-height: 1;
+}
+
+.philosophy-node-description {
+    max-width: 340px;
+    margin-top: 8px;
+    color: var(--color-text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.philosophy-connection {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 180px;
+}
+
+.philosophy-connection-line {
+    width: 60px;
+    height: 1px;
+    flex-shrink: 0;
+    background: var(--color-gold);
+}
+
+.philosophy-connection-name {
+    color: var(--color-gold);
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+}
+
+.philosophy-closing {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--space-3xl);
+    text-align: center;
+}
+
+.philosophy-closing p {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(38px, 5vw, 72px);
+    line-height: 1;
+}
+
+.philosophy-closing span { color: var(--color-text-muted); }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .philosophy-intro {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-xl);
+    }
+
+    .philosophy-description {
+        max-width: 600px;
+        margin-bottom: 0;
+    }
+
+    .philosophy-bridge {
+        gap: var(--space-lg);
+    }
+
+    .philosophy-connection { min-width: 140px; }
+    .philosophy-connection-line { width: 40px; }
+}
+
+@media (max-width: 768px) {
+    .philosophy-intro {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-lg);
+    }
+
+    .philosophy-title,
+    .philosophy-description {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .philosophy-title {
+        font-size: clamp(42px, 12vw, 60px);
+    }
+
+    .philosophy-description {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .philosophy-bridge {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        margin-top: var(--space-2xl);
+        padding: var(--space-xl) 0;
+    }
+
+    .philosophy-connection {
+        justify-content: flex-start;
+        min-width: 0;
+    }
+
+    .philosophy-connection-line { width: 40px; }
+
+    .philosophy-node-description {
+        max-width: 100%;
+    }
+
+    .philosophy-closing {
+        padding-top: var(--space-2xl);
+    }
+
+    .philosophy-closing p {
+        font-size: clamp(38px, 10vw, 56px);
+    }
+}
+
+@media (max-width: 390px) {
+    .philosophy-title { font-size: clamp(40px, 12vw, 54px); }
+}
