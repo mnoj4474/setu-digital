@@ -18,6 +18,8 @@ import Terms from "./pages/Terms/Terms";
 
 import { initScrollAnimations } from "./utils/animations";
 
+import { Analytics } from "@vercel/analytics/react";
+
 function Home() {
     useEffect(() => {
         initScrollAnimations();
@@ -51,8 +53,10 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
+                <Analytics />
             </Routes>
         </BrowserRouter>
+
     );
 }
 
