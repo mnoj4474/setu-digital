@@ -49,11 +49,13 @@ function Home() {
 function App() {
     return (
         <BrowserRouter>
+
+        <Analytics />
+        
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
-                <Analytics />
             </Routes>
         </BrowserRouter>
 
